@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The HomeStud Outpost</title>
+    
+    <!-- Fonts: Merriweather (Serif) and Courier Prime (Mono) for that 1926 vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              antique: {
+                DEFAULT: '#FAF9F6',
+                dark: '#EBE9E4',
+              },
+              leather: {
+                DEFAULT: '#B88A64', // Saddle Tan
+                dark: '#8B6544',
+                light: '#D4B08F',
+              },
+              brass: {
+                DEFAULT: '#C2996B', // Aged Brass
+                dark: '#9A7850',
+                metallic: '#D4AF37',
+              },
+              ink: {
+                DEFAULT: '#1F1E1D',
+                light: '#3E3C3A',
+              }
+            },
+            fontFamily: {
+              serif: ['Merriweather', 'serif'],
+              mono: ['"Courier Prime"', 'monospace'],
+            },
+            boxShadow: {
+              'hard': '4px 4px 0px 0px rgba(31, 30, 29, 0.2)',
+              'hard-sm': '2px 2px 0px 0px rgba(31, 30, 29, 0.2)',
+              'inner-paper': 'inset 0 0 30px rgba(184, 138, 100, 0.15)',
+            },
+            backgroundImage: {
+              'paper-texture': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+            },
+            animation: {
+              marquee: 'marquee 40s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FAF9F6;
+        color: #1F1E1D;
+        /* Subtle noise texture overlay */
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      }
+      /* Typewriter cursor animation */
+      .typewriter-cursor::after {
+        content: '|';
+        animation: blink 1s step-start infinite;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.574.0",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
